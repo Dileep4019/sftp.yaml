@@ -21,14 +21,14 @@
         PATH: "C:\\Users\\"
         
     - name: Configure Minio Client
-      command: "C:\\mc.exe config host add minio {{ minio_server_url }} {{ minio_access_key }} {{ minio_secret_key }}"
+      command: "C:\\Users\\mc.exe config host add minio {{ minio_server_url }} {{ minio_access_key }} {{ minio_secret_key }}"
       vars:
-        minio_server_url: "https://10.10.5.182:9000"
+        minio_server_url: "http://10.10.5.182:9000"
         minio_access_key: "minioadmin"
         minio_secret_key: "minio_admin"
 
     - name: Download an Object from Minio
-      command: "C:\\Users\\ cp minio/arc/Arc_11102023 C:\\Users\\"
+      command: "C:\\Users\\mc.exe cp minio/arc/Arc_11102023 C:\\Users\\ --recurisve"
       vars:
         minio_bucket_name: "arc"
       when: download_result.changed
