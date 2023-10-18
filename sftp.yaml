@@ -5,5 +5,5 @@
   tasks:
     - name: Configure Minio client
       win_shell: |
-        mc config host add minio https://10.10.5.182 minioadmin minio_admin
-      become: yes
+        mc config host add minio https://10.10.5.81:9000 minioadmin minio_admin
+      become: no
