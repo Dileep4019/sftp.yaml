@@ -4,7 +4,7 @@
   gather_facts: no
   tasks:
     - name: Create minio-client Folder
-      win_shell: New-Item -ItemType Directory -Path C:\minio-client
+      win_shell: New-Item -ItemType Directory -Path C:\\Users\\minio-client
       become: no
       
     - name: Download Minio Client
