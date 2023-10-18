@@ -1,18 +1,9 @@
 ---
-- name: Transfer file from SFTP to Windows
-  hosts: 10.10.5.183
+- name: Configure Minio Client
+  hosts: 10.10.5.182
   gather_facts: no
-
   tasks:
-    - name: Fetch file from SFTP server
-      fetch:
-        src: "sftp://inndata@10.10.5.76/home/inndata/test.txt"
-        dest: "/root/testfile.txt"
-        flat: yes
-        validate_certs: no
-        fail_on_missing: yes
-
-    - name: Copy file to Windows server
-      win_copy:
-        src: "/root/testfile.txt"
-        dest: "C:\\PrometheusExporter\\testfile.txt"
+    - name: Configure Minio client
+      win_shell: |
+        mc config host add minio https://10.10.5.182 minioadmin minio_admin
+      become: yes
