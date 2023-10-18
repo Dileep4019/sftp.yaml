@@ -3,6 +3,10 @@
   hosts: 10.10.5.182
   gather_facts: no
   tasks:
+    - name: Create minio-client Folder
+      win_shell: New-Item -ItemType Directory -Path C:\minio-client
+      become: yes
+      
     - name: Download Minio Client
       win_get_url:
         url: "https://dl.min.io/client/mc/release/windows-amd64/mc.exe"
