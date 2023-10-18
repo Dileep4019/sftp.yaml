@@ -23,7 +23,7 @@
 
     - name: Configure Minio client
       win_shell: |
-        mc config host add minio https://10.10.5.81:9000 minioadmin minio_admin
+        mc config host add minio http://10.10.5.81:9000 minioadmin minio_admin
       become: no
 
     - name: Copy Executables from Minio
