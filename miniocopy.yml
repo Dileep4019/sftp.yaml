@@ -5,7 +5,7 @@
   tasks:
     - name: Create minio-client Folder
       win_shell: New-Item -ItemType Directory -Path C:\minio-client
-      become: yes
+      become: no
       
     - name: Download Minio Client
       win_get_url:
