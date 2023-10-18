@@ -22,7 +22,7 @@
     - name: Configure Minio Client
       win_shell: "C:\\Users\\minio-client\\mc.exe config host add minio {{ minio_server_url }} {{ minio_access_key }} {{ minio_secret_key }}"
       vars:
-        minio_server_url: "https://10.10.5.81:9000"
+        minio_server_url: "http://10.10.5.81:9000"
         minio_access_key: "minioadmin"
         minio_secret_key: "minio_admin"
 
