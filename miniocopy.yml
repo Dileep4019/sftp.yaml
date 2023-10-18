@@ -15,10 +15,6 @@
         msg: "Failed to download Minio Client"
       when: download_result.failed
 
-    - name: Set Environment Variables
-      environment:
-        PATH: "C:\\Users\\minio-client;{{ ansible_env.PATH }}"
-
     - name: Configure Minio Client
       win_shell: "C:\\Users\\minio-client\\mc.exe config host add minio {{ minio_server_url }} {{ minio_access_key }} {{ minio_secret_key }}"
       vars:
