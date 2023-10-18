@@ -24,7 +24,7 @@
     - name: Configure Minio client
       win_shell: |
         mc config host add minio https://10.10.5.81:9000 minioadmin minio_admin
-      become: yes
+      become: no
 
     - name: Copy Executables from Minio
       win_shell: mc cp minio/arc/Arc_11102023 C:\Users\
